@@ -1,6 +1,7 @@
 package com.jhno.community.mapper;
 
 import com.jhno.community.model.User;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
@@ -10,6 +11,7 @@ public interface UserMapper {
     int insertSelective(User record);
 
     User selectByPrimaryKey(Integer id);
+    User findByToken(@Param("token")String token);
 
     int updateByPrimaryKeySelective(User record);
 
